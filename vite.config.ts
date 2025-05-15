@@ -1,8 +1,17 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// Tailwind CSS
+// =================== [ Tailwind CSS ] ===================
 import tailwindcss from '@tailwindcss/vite'
+
+// =================== [ '@' Alias ] ===================
+//@ts-ignore
+import path from "path";
+
+//@ts-ignore
+const src = path.resolve(__dirname, "src");
+
+
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -10,4 +19,5 @@ export default defineConfig({
         react(),
         tailwindcss(),    // Tailwind CSS plugin
     ],
+    resolve: { alias: { "@": "/src" } },
 })
